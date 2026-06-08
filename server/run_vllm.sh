@@ -1,7 +1,7 @@
 #!/bin/bash
 
 python -m vllm.entrypoints.openai.api_server \
-  --model meta-llama/Llama-3-8B-Instruct \
+  --model mistralai/Mistral-7B-Instruct-v0.2 \
   --host 0.0.0.0 \
   --port 8000 \
   --gpu-memory-utilization 0.9 \
