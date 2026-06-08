@@ -35,3 +35,17 @@ We measure:
 ### Start server
 ```bash
 bash server/run_vllm.sh
+
+
+# ⚡ How to run on Vast.ai (your exact setup)
+
+1. Spin up:
+- 1x RTX 4090 or A100
+
+2. Install:
+```bash
+pip install vllm openai aiohttp pandas matplotlib
+Start server:
+bash server/run_vllm.sh
+Run benchmark:
+python benchmark/runner.py
