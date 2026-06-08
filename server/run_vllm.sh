@@ -1,8 +1,18 @@
 #!/bin/bash
 
+set -e
+
+export CUDA_VISIBLE_DEVICES=0
+
+# Prevent CUDA fragmentation issues
+export PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True
+
 python -m vllm.entrypoints.openai.api_server \
-  --model microsoft/Phi-3-mini-4k-instruct \
   --host 0.0.0.0 \
   --port 8000 \
-  --gpu-memory-utilization 0.50 \
-  --max-model-len 1025
+  --model mistralai/Mistral-7B-Instruct-v0.2 \
+  --dtype float16 \
+  --gpu-memory-utilization 0.60 \
+  --max-model-len 1024 \
+  --enforce-eager \
+  --disable-log-stats
