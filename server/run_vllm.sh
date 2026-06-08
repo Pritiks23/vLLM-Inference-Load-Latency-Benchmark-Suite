@@ -10,7 +10,7 @@ export PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True
 python -m vllm.entrypoints.openai.api_server \
   --host 0.0.0.0 \
   --port 8000 \
-  --model mistralai/Mistral-7B-Instruct-v0.2 \
+  --model microsoft/Phi-3-mini-4k-instruct \
   --dtype float16 \
   --gpu-memory-utilization 0.60 \
   --max-model-len 1024 \
